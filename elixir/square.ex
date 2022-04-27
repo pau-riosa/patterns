@@ -1,7 +1,7 @@
 square = fn n ->
   string =
-    for x when x < n <- 0..n do
-      for y when y < n <- 0..n do
+    for _x <- 0..n do
+      for _y <- 0..n do
         " *"
       end
     end

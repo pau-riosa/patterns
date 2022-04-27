@@ -24,3 +24,4 @@ hollow = fn number ->
 end
 
 IO.puts(hollow.(10))
+IO.puts(hollow.(5))
