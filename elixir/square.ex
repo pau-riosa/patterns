@@ -1,18 +1,13 @@
 square = fn n ->
-  string =
-    for _x <- 0..n do
-      for _y <- 0..n do
-        " *"
-      end
+  for _x <- 0..n do
+    for _y <- 0..n do
+      " *"
     end
-
-  result =
-    Enum.into(string, "", fn f ->
-      new_string = Enum.join(f)
-      "#{new_string}\n"
-    end)
-
-  result
+  end
+  |> Enum.into("", fn string ->
+    string = Enum.join(string)
+    "#{string}\n"
+  end)
 end
 
 IO.puts(square.(10))
