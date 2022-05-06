@@ -21,3 +21,4 @@ right_triangle = fn number ->
 end
 
 IO.puts(right_triangle.(10))
+IO.puts(right_triangle.(5))
