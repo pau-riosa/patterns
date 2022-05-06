@@ -1,5 +1,5 @@
 pyramid = fn number ->
-  for i when i <= number <- 1..number do
+  for i <- 1..number do
     # for printing spaces
 
     spaces =
@@ -7,10 +7,11 @@ pyramid = fn number ->
         " "
       end
 
-    star_number = 2 * i - 1
     # for printing star
+    star_number = 2 * i - 1
+
     star =
-      for k <- 1..star_number do
+      for _k <- 1..star_number do
         "*"
       end
 
