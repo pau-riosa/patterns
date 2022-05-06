@@ -1,4 +1,4 @@
-pyramid = fn number ->
+reverse_pyramid = fn number ->
   for i <- 0..number do
     # for printing spaces
 
@@ -23,5 +23,5 @@ pyramid = fn number ->
   end)
 end
 
-IO.puts(pyramid.(10))
-IO.puts(pyramid.(5))
+IO.puts(reverse_pyramid.(10))
+IO.puts(reverse_pyramid.(5))
