@@ -3,7 +3,7 @@ reverse_pyramid = fn number ->
     # for printing spaces
 
     spaces =
-      for j <- 0..i do
+      for _j <- 0..i do
         " "
       end
 
