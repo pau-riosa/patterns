@@ -1,2 +1,2 @@
-# Patterns
-A playground for me to try out creating patterns using javascript and elixir. Feel free to contribute. Thanks.
+# paugramming-codes
+a series of coding problems that I tried to learng and solve.
