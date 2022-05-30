@@ -5,35 +5,19 @@ defmodule LetterPrecedence do
   Note: Each represented word contains a set of unique characters, i.e. the word does not contain duplicate letters.
   """
   def call(rules) do
-    split_letters =
-      for letters <- rules do
-        String.split(letters, ">")
-      end
+    split_letters = Enum.map(rules, &String.split(&1, ">"))
+    start_letters = Enum.map(split_letters, &Enum.at(&1, 0))
+    end_letters = Enum.map(split_letters, &Enum.at(&1, 1))
+    start_letter = Enum.find(start_letters, &(not Enum.member?(end_letters, &1)))
 
-    start_letters =
-      Enum.map(split_letters, fn [start, _] ->
-        start
-      end)
-
-    end_letters =
-      Enum.map(split_letters, fn [_, followed_by] ->
-        followed_by
-      end)
-
-    start_letter =
-      Enum.find(start_letters, fn letter ->
-        not Enum.member?(end_letters, letter)
-      end)
-
-    for [start, followed] <- split_letters do
-      {start, followed}
-    end
+    split_letters
+    |> Enum.map(&{Enum.at(&1, 0), Enum.at(&1, 1)})
     |> Enum.into(%{})
     |> recur(start_letter, start_letter)
     |> IO.inspect()
   end
 
-  def recur(map, key, acc) when map_size(map) == 0 do
+  def recur(map, _key, acc) when map_size(map) == 0 do
     acc
   end
 
