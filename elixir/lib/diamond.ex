@@ -1,30 +1,14 @@
 defmodule Diamond do
-  def call(number) do
-    diamond = pyramid(number) ++ reverse_pyramid(number)
+  alias Pyramid
 
-    diamond
+  def call(number) do
+    number
+    |> Pyramid.pyramid()
+    |> Kernel.++(reverse_pyramid(number))
     |> Enum.into("", fn string ->
       string = Enum.join(string)
       "#{string}\n"
     end)
-  end
-
-  def pyramid(number) do
-    for i <- 1..number do
-      spaces =
-        for j when j <= number - i <- 1..number do
-          " "
-        end
-
-      star_number = 2 * i - 1
-
-      star =
-        for _k <- 1..star_number do
-          "*"
-        end
-
-      spaces ++ star
-    end
   end
 
   def reverse_pyramid(number) do

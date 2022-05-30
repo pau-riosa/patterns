@@ -1,27 +1,29 @@
-pyramid = fn number ->
-  for i <- 1..number do
-    # for printing spaces
-
-    spaces =
-      for j when j <= number - i <- 1..number do
-        " "
-      end
-
-    # for printing star
-    star_number = 2 * i - 1
-
-    star =
-      for _k <- 1..star_number do
-        "*"
-      end
-
-    spaces ++ star
+defmodule Pyramid do
+  def call(number) do
+    Enum.into(pyramid(number), "", fn string ->
+      string = Enum.join(string)
+      "#{string}\n"
+    end)
   end
-  |> Enum.into("", fn string ->
-    string = Enum.join(string)
-    "#{string}\n"
-  end)
-end
 
-IO.puts(pyramid.(10))
-IO.puts(pyramid.(5))
+  def pyramid(number) do
+    for i <- 1..number do
+      # for printing spaces
+
+      spaces =
+        for j when j <= number - i <- 1..number do
+          " "
+        end
+
+      # for printing star
+      star_number = 2 * i - 1
+
+      star =
+        for _k <- 1..star_number do
+          "*"
+        end
+
+      spaces ++ star
+    end
+  end
+end
