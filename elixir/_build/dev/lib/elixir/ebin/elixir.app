@@ -1,0 +1,9 @@
+{application,elixir,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"elixir"},
+              {modules,['Elixir.Diamond','Elixir.Fibonacci',
+                        'Elixir.LetterPrecedence',
+                        'Elixir.MultiplesOfThreeOrFive','Elixir.Pyramid',
+                        'Elixir.ReversePyramid']},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.
