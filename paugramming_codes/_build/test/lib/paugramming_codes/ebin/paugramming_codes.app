@@ -1,0 +1,9 @@
+{application,paugramming_codes,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"paugramming_codes"},
+              {modules,['Elixir.Diamond','Elixir.Fibonacci',
+                        'Elixir.LetterPrecedence',
+                        'Elixir.MultiplesOfThreeOrFive','Elixir.Pyramid',
+                        'Elixir.ReversePyramid']},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.
