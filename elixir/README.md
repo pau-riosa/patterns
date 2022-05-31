@@ -1,16 +1,16 @@
-# Elixir
+# Paugramming Codes 
 
 **TODO: Add description**
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir` to your list of dependencies in `mix.exs`:
+by adding `paugramming_codes` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:elixir, "~> 0.1.0"}
+    {:paugramming_codes, "~> 0.1.0"}
   ]
 end
 ```
