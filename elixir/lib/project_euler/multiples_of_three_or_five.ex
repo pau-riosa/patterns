@@ -7,7 +7,7 @@ defmodule MultiplesOfThreeOrFive do
   """
 
   def call(list) do
-    list
+    1..list
     |> Enum.filter(fn integer ->
       rem(integer, 3) == 0 || rem(integer, 5) == 0
     end)
